@@ -1,0 +1,74 @@
+\documentclass[border=5pt]{standalone}
+% \documentclass[class=article, crop=false]{standalone}
+\usepackage{pgfplots,
+            pgfplotstable,
+            }
+\pgfplotsset{compat=newest}
+
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[   
+        scaled ticks=false, 
+        tick label style={/pgf/number format/fixed},
+        xlabel={Week of Year},
+        ylabel={Total Deaths}, 
+        legend style={
+        at={(0.0,-0.3)},
+        anchor=west,
+        draw=none,
+        fill=none,
+        legend columns=5},
+        grid = both,
+        grid style={line width=.1pt, draw=gray!30},
+        major grid style={line width=.2pt,draw=gray!70},
+        align =center, 
+        title= {Provisional Registered Deaths Per Week in UK \\
+        \tiny source:
+        \texttt{https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/}
+        \\
+        \tiny 
+        \texttt{deaths/datasets/weeklyprovisionalfiguresondeathsregisteredinenglandandwales}
+        },
+        xtick=data,
+        ytick={9000,10000,11000,12000, 13000, 14000, 15000},
+        width=0.8\textwidth,
+        height=6cm,
+     ]
+        % \addplot table[x=week, y=2010,col sep=comma] {wk_agg_deaths.csv};
+        % \addlegendentry{2010}
+        
+        % \addplot table[x=week, y=2011,col sep=comma] {wk_agg_deaths.csv};
+        % \addlegendentry{2011}
+
+        \addplot table[x=week, y=2012,col sep=comma] {wk_agg_deaths.csv};
+        \addlegendentry{2012}
+        
+        % \addplot table[x=week, y=2013,col sep=comma] {wk_agg_deaths.csv};
+        % \addlegendentry{2013}
+        
+        \addplot table[x=week, y=2014,col sep=comma] {wk_agg_deaths.csv};
+        \addlegendentry{2014}
+        
+        % \addplot table[x=week, y=2015,col sep=comma] {wk_agg_deaths.csv};
+        % \addlegendentry{2015}
+        
+        \addplot table[x=week, y=2016,col sep=comma] {wk_agg_deaths.csv};
+        \addlegendentry{2016}
+        
+        % \addplot table[x=week, y=2017,col sep=comma] {wk_agg_deaths.csv};
+        % \addlegendentry{2017}
+        
+        \addplot table[x=week, y=2018,col sep=comma] {wk_agg_deaths.csv};
+        \addlegendentry{2018}
+        
+        % \addplot table[x=week, y=2019,col sep=comma] {wk_agg_deaths.csv};
+        % \addlegendentry{2019}
+        
+        \addplot table[x=week, y=2020,col sep=comma] {wk_agg_deaths.csv};
+        \addlegendentry{2020}
+        \end{axis}
+    \end{tikzpicture}
+%  \tiny \texttt{https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/weeklyprovisionalfiguresondeathsregisteredinenglandandwales}
+
+\end{document}
