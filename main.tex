@@ -12,12 +12,14 @@
         tick label style={/pgf/number format/fixed},
         xlabel={Week of Year},
         ylabel={Total Deaths}, 
-        legend style={
-        at={(0.0,-0.3)},
-        anchor=west,
-        draw=none,
-        fill=none,
-        legend columns=5},
+        legend style=
+        {
+            at={(0.0,-0.3)},
+            anchor=west,
+            draw=none,
+            fill=none,
+            legend columns=5
+        },
         grid = both,
         grid style={line width=.1pt, draw=gray!30},
         major grid style={line width=.2pt,draw=gray!70},
@@ -34,6 +36,9 @@
         width=0.8\textwidth,
         height=6cm,
      ]
+    
+% Uncomment blocks to view different years     
+     
         % \addplot table[x=week, y=2010,col sep=comma] {wk_agg_deaths.csv};
         % \addlegendentry{2010}
         
@@ -68,6 +73,4 @@
         \addlegendentry{2020}
         \end{axis}
     \end{tikzpicture}
-%  \tiny \texttt{https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/weeklyprovisionalfiguresondeathsregisteredinenglandandwales}
-
 \end{document}
